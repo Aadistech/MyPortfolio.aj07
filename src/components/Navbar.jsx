@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Orbit, Github, Youtube, Menu, X, Sparkles, Terminal } from 'lucide-react';
+import { Orbit, Github, Youtube, Instagram, Menu, X, Sparkles, Terminal } from 'lucide-react';
 
 export default function Navbar({ gravityMode, toggleGravity }) {
   const [scrolled, setScrolled] = useState(false);
@@ -98,10 +98,21 @@ export default function Navbar({ gravityMode, toggleGravity }) {
             href="https://www.youtube.com/@sgboysbhatkanti"
             target="_blank"
             rel="noopener noreferrer"
-            title="SG Boy's Bhatkanti Channel"
+            title="SG Boy's Bhatkanti YouTube"
             className="p-2 rounded-full bg-white/[0.04] hover:bg-red-500/20 text-slate-300 hover:text-red-400 border border-white/10 hover:border-red-400/30 transition-all duration-200"
           >
             <Youtube className="w-4 h-4" />
+          </a>
+
+          {/* Instagram SG Boy's Bhatkanti Icon Link */}
+          <a
+            href="https://www.instagram.com/sgboysbhatkanti/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="SG Boy's Bhatkanti Instagram"
+            className="p-2 rounded-full bg-white/[0.04] hover:bg-pink-500/20 text-slate-300 hover:text-pink-400 border border-white/10 hover:border-pink-400/30 transition-all duration-200"
+          >
+            <Instagram className="w-4 h-4" />
           </a>
 
           {/* Mobile Menu Button */}
@@ -160,9 +171,17 @@ export default function Navbar({ gravityMode, toggleGravity }) {
                 href="https://www.youtube.com/@sgboysbhatkanti"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-slate-400 hover:text-red-400"
+                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-red-400"
               >
-                <Youtube className="w-4 h-4" /> YouTube
+                <Youtube className="w-3.5 h-3.5" /> YouTube
+              </a>
+              <a
+                href="https://www.instagram.com/sgboysbhatkanti/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-pink-400"
+              >
+                <Instagram className="w-3.5 h-3.5" /> Instagram
               </a>
             </div>
           </motion.div>

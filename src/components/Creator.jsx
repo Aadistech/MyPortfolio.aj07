@@ -13,7 +13,10 @@ import {
   ExternalLink,
   Flame,
   Eye,
-  TrendingUp
+  TrendingUp,
+  Instagram,
+  Scissors,
+  Smartphone
 } from 'lucide-react';
 
 export default function Creator({ mousePosition }) {
@@ -22,6 +25,7 @@ export default function Creator({ mousePosition }) {
   const parallaxY = (mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) * -0.012;
 
   const channelUrl = 'https://www.youtube.com/@sgboysbhatkanti';
+  const instagramUrl = 'https://www.instagram.com/sgboysbhatkanti/';
 
   // The 3 top/most-viewed reference trek episodes from @sgboysbhatkanti
   const vlogs = [
@@ -259,18 +263,30 @@ export default function Creator({ mousePosition }) {
                 Blending creative storytelling with professional editing workflows.
               </p>
 
-              <a
-                href={channelUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 transition-all duration-300 shadow-lg shadow-amber-500/20"
-              >
-                <Youtube className="w-4 h-4 fill-current text-red-600" />
-                <span>Subscribe to SG Boy's Bhatkanti</span>
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={channelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 transition-all duration-300 shadow-lg shadow-amber-500/20"
+                >
+                  <Youtube className="w-4 h-4 fill-current text-red-600" />
+                  <span>Subscribe on YouTube</span>
+                </a>
+
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-pink-600 via-rose-600 to-amber-600 hover:opacity-90 transition-all duration-300 shadow-lg shadow-rose-950/40"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>Follow on Instagram</span>
+                </a>
+              </div>
             </div>
 
-            {/* Right: Canva & Premiere Pro Dual Cards */}
+            {/* Right: 4 Creative Tools Grid (Canva, Premiere Pro, CapCut, Instagram) */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Canva Card */}
               <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/40 transition-colors">
@@ -290,11 +306,11 @@ export default function Creator({ mousePosition }) {
                   </li>
                   <li className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    Visual hierarchy &amp; dynamic Marathi typography
+                    Visual hierarchy &amp; Marathi typography
                   </li>
                   <li className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    Channel branding and social story cards
+                    Channel branding and story graphics
                   </li>
                 </ul>
               </div>
@@ -306,25 +322,89 @@ export default function Creator({ mousePosition }) {
                     <Film className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white">Adobe Premiere Pro</h4>
+                    <h4 className="text-base font-bold text-white">Premiere Pro</h4>
                     <span className="text-[10px] font-mono text-purple-400">4K Timeline &amp; Audio Mastery</span>
                   </div>
                 </div>
                 <ul className="space-y-1.5 text-xs text-slate-300 font-light">
                   <li className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                    Cinematic 4K grading &amp; nature LUTs
+                    Cinematic 4K color grading &amp; nature LUTs
                   </li>
                   <li className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                    Dynamic speed ramping on ridge scrambles
+                    Speed ramping on tricky ridge scrambles
                   </li>
                   <li className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                    Multi-layer audio mixing &amp; ambient soundscapes
+                    Multi-layer audio &amp; ambient wind soundscapes
                   </li>
                 </ul>
               </div>
+
+              {/* CapCut Card */}
+              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-400/30 text-cyan-300">
+                    <Scissors className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-white">CapCut</h4>
+                    <span className="text-[10px] font-mono text-cyan-400">Viral Shorts &amp; Fast Pacing</span>
+                  </div>
+                </div>
+                <ul className="space-y-1.5 text-xs text-slate-300 font-light">
+                  <li className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    Fast-paced 9:16 vertical video editing
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    Beat-synced jump cuts &amp; trail transitions
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    Dynamic kinetic subtitles &amp; audio effects
+                  </li>
+                </ul>
+              </div>
+
+              {/* Instant by Instagram Card */}
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-pink-500/50 hover:bg-white/[0.05] transition-all group/ig"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white shadow-md">
+                      <Instagram className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-white group-hover/ig:text-pink-300 transition-colors">
+                        Instant Instagram
+                      </h4>
+                      <span className="text-[10px] font-mono text-rose-400">@sgboysbhatkanti</span>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover/ig:text-pink-300 transition-colors" />
+                </div>
+                <ul className="space-y-1.5 text-xs text-slate-300 font-light">
+                  <li className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+                    Real-time summit stories &amp; live trail updates
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+                    Short-form viral reels &amp; drone panoramas
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+                    Community interaction, route Q&amp;As &amp; polls
+                  </li>
+                </ul>
+              </a>
             </div>
           </div>
         </motion.div>

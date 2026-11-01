@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   Github, 
   Youtube, 
+  Instagram,
   Mail, 
   Copy, 
   Check, 
@@ -105,7 +106,17 @@ export default function Contact({ mousePosition }) {
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] hover:bg-red-500/10 border border-white/10 hover:border-red-400/40 text-slate-300 hover:text-red-400 text-xs font-mono transition-all"
             >
               <Youtube className="w-4 h-4" />
-              <span>YouTube: SG Boy's Bhatkanti</span>
+              <span>YouTube</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/sgboysbhatkanti/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] hover:bg-pink-500/10 border border-white/10 hover:border-pink-400/40 text-slate-300 hover:text-pink-400 text-xs font-mono transition-all"
+            >
+              <Instagram className="w-4 h-4" />
+              <span>Instagram: @sgboysbhatkanti</span>
             </a>
           </div>
         </motion.div>
