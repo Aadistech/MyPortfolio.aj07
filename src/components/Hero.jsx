@@ -190,7 +190,7 @@ export default function Hero({ mousePosition }) {
               <div>
                 <h2 className="text-sm font-bold text-white">Aaditya Jadhav</h2>
                 <p className="text-xs font-mono text-cyan-400">CS &amp; ML Engineer</p>
-                <p className="text-[11px] text-slate-400">Pune, Maharashtra</p>
+                <p className="text-[11px] text-slate-400">Mumbai, Maharashtra</p>
               </div>
             </div>
 
