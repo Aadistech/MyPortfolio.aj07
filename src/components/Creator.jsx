@@ -35,7 +35,9 @@ export default function Creator({ mousePosition }) {
       tag: 'Most Viewed',
       badge: '4K Trek Guide',
       elevation: '3,500 FT',
+      duration: '16:42',
       location: 'Maval, Pawna Lake, Pune',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1571687949921-1306bfb24b72?auto=format&fit=crop&w=1000&q=80',
       description:
         'Conquering the iconic triangular Vitandgad hill fort, historic bastion gates, Trimbakeshwar Mahadev temple, and panoramic views of Pawna Dam.',
       bgGradient: 'from-amber-600/30 via-orange-900/20 to-slate-950',
@@ -53,7 +55,9 @@ export default function Creator({ mousePosition }) {
       tag: 'Top Trek',
       badge: 'Basalt Pinnacle',
       elevation: '1,440 FT',
+      duration: '14:18',
       location: 'Panvel, Raigad District',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
       description:
         'Hiking through dense forest trails inside Karnala Bird Sanctuary to scale the legendary 125-foot basalt rock chimney (Pandu\'s Tower).',
       bgGradient: 'from-orange-600/30 via-rose-900/20 to-slate-950',
@@ -71,7 +75,9 @@ export default function Creator({ mousePosition }) {
       tag: 'Adventure Special',
       badge: 'Ridge Climb',
       elevation: '2,100 FT',
+      duration: '19:05',
       location: 'Neral - Matheran Ridge',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1000&q=80',
       description:
         'Extreme ridge walk featuring steep iron ladder climbs, rock-cut steps, caves, and the revered cliff-edge Kadyavarcha Ganpati shrine.',
       bgGradient: 'from-yellow-600/30 via-amber-900/20 to-slate-950',
@@ -173,33 +179,46 @@ export default function Creator({ mousePosition }) {
                     href={vlog.videoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block relative w-full h-44 rounded-2xl bg-black/50 border border-white/10 mb-5 overflow-hidden group/thumb group-hover:border-amber-400/40 transition-colors"
+                    className="block relative w-full h-44 rounded-2xl bg-black/50 border border-white/10 mb-5 overflow-hidden group/thumb group-hover:border-amber-400/50 transition-all shadow-inner"
                   >
+                    {/* Realistic Trek Video Thumbnail Image */}
+                    <img
+                      src={vlog.thumbnailUrl}
+                      alt={vlog.title}
+                      className="absolute inset-0 w-full h-full object-cover object-center group-hover/thumb:scale-110 transition-transform duration-700 ease-out"
+                      loading="lazy"
+                    />
+
+                    {/* Dark gradient vignettes for maximum text contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-black/60 group-hover/thumb:opacity-85 transition-opacity" />
+
                     {/* Decorative Top Badges */}
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-amber-300 border border-amber-400/30 flex items-center gap-1">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-amber-300 border border-amber-400/40 flex items-center gap-1 backdrop-blur-sm shadow-md">
                         <Flame className="w-3 h-3 text-amber-400" />
                         {vlog.tag}
                       </span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-600/90 text-white font-bold tracking-wide">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-600/90 text-white font-bold tracking-wide shadow-md">
                         {vlog.badge}
                       </span>
                     </div>
 
-                    {/* Central Play Badge */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600/80 group-hover/thumb:bg-red-500 group-hover/thumb:scale-115 text-white transition-all duration-300 backdrop-blur-md border border-white/30 shadow-xl shadow-red-950/60">
+                    {/* Central YouTube Play Badge with Glow */}
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <div className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600/90 group-hover/thumb:bg-red-500 group-hover/thumb:scale-115 text-white transition-all duration-300 backdrop-blur-md border border-white/40 shadow-2xl shadow-red-950/80">
                         <Play className="w-6 h-6 ml-0.5 fill-current" />
                       </div>
                     </div>
 
-                    {/* Location Badge */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300 bg-black/70 px-2.5 py-1 rounded-lg backdrop-blur-sm border border-white/5">
-                      <span className="flex items-center gap-1 truncate max-w-[180px]">
+                    {/* Location & Video Duration Badges */}
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-200 z-10">
+                      <span className="flex items-center gap-1 bg-black/80 px-2 py-0.5 rounded backdrop-blur-sm border border-white/10 truncate max-w-[170px]">
                         <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
                         <span className="truncate">{vlog.location}</span>
                       </span>
-                      <span className="text-amber-300 font-semibold shrink-0">{vlog.elevation}</span>
+                      <span className="bg-black/90 px-2 py-0.5 rounded text-amber-300 font-bold border border-white/10 shrink-0">
+                        {vlog.duration}
+                      </span>
                     </div>
                   </a>
 
