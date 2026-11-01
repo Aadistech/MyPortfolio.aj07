@@ -15,7 +15,7 @@ import {
 
 export default function Contact({ mousePosition }) {
   const [copied, setCopied] = useState(false);
-  const email = 'aadityajadhav.tech@gmail.com';
+  const email = 'aaditya2508.jadhav25@gmail.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
