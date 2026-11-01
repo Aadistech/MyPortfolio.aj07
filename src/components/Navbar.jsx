@@ -104,12 +104,12 @@ export default function Navbar({ gravityMode, toggleGravity }) {
             <Youtube className="w-4 h-4" />
           </a>
 
-          {/* Instagram SG Boy's Bhatkanti Icon Link */}
+          {/* Personal Instagram Icon Link */}
           <a
-            href="https://www.instagram.com/sgboysbhatkanti/"
+            href="https://www.instagram.com/aadijdv_/"
             target="_blank"
             rel="noopener noreferrer"
-            title="SG Boy's Bhatkanti Instagram"
+            title="Aaditya's Instagram (@aadijdv_)"
             className="p-2 rounded-full bg-white/[0.04] hover:bg-pink-500/20 text-slate-300 hover:text-pink-400 border border-white/10 hover:border-pink-400/30 transition-all duration-200"
           >
             <Instagram className="w-4 h-4" />
@@ -176,12 +176,12 @@ export default function Navbar({ gravityMode, toggleGravity }) {
                 <Youtube className="w-3.5 h-3.5" /> YouTube
               </a>
               <a
-                href="https://www.instagram.com/sgboysbhatkanti/"
+                href="https://www.instagram.com/aadijdv_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-pink-400"
               >
-                <Instagram className="w-3.5 h-3.5" /> Instagram
+                <Instagram className="w-3.5 h-3.5" /> @aadijdv_
               </a>
             </div>
           </motion.div>

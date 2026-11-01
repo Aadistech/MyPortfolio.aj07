@@ -88,7 +88,7 @@ export default function Contact({ mousePosition }) {
           </div>
 
           {/* Key Links Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4 border-t border-white/10">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-4 border-t border-white/10">
             <a
               href="https://github.com/Aadistech"
               target="_blank"
@@ -100,23 +100,33 @@ export default function Contact({ mousePosition }) {
             </a>
 
             <a
+              href="https://www.instagram.com/aadijdv_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] hover:bg-pink-500/10 border border-white/10 hover:border-pink-400/40 text-slate-300 hover:text-pink-400 text-xs font-mono transition-all"
+            >
+              <Instagram className="w-4 h-4 text-pink-400" />
+              <span>Instagram: @aadijdv_</span>
+            </a>
+
+            <a
               href="https://www.youtube.com/@sgboysbhatkanti"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] hover:bg-red-500/10 border border-white/10 hover:border-red-400/40 text-slate-300 hover:text-red-400 text-xs font-mono transition-all"
             >
-              <Youtube className="w-4 h-4" />
-              <span>YouTube</span>
+              <Youtube className="w-4 h-4 text-red-500" />
+              <span>YouTube: SG Boy's Bhatkanti</span>
             </a>
 
             <a
               href="https://www.instagram.com/sgboysbhatkanti/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] hover:bg-pink-500/10 border border-white/10 hover:border-pink-400/40 text-slate-300 hover:text-pink-400 text-xs font-mono transition-all"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] hover:bg-amber-500/10 border border-white/10 hover:border-amber-400/40 text-slate-300 hover:text-amber-400 text-xs font-mono transition-all"
             >
-              <Instagram className="w-4 h-4" />
-              <span>Instagram: @sgboysbhatkanti</span>
+              <Instagram className="w-4 h-4 text-amber-400" />
+              <span>Creator IG: @sgboysbhatkanti</span>
             </a>
           </div>
         </motion.div>
