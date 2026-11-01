@@ -95,7 +95,7 @@ export default function Navbar({ gravityMode, toggleGravity }) {
 
           {/* YouTube SG Boy's Bhatkanti Icon Link */}
           <a
-            href="https://youtube.com/@SGBoysBhatkanti"
+            href="https://www.youtube.com/@sgboysbhatkanti"
             target="_blank"
             rel="noopener noreferrer"
             title="SG Boy's Bhatkanti Channel"
@@ -157,7 +157,7 @@ export default function Navbar({ gravityMode, toggleGravity }) {
                 <Github className="w-4 h-4" /> GitHub
               </a>
               <a
-                href="https://youtube.com/@SGBoysBhatkanti"
+                href="https://www.youtube.com/@sgboysbhatkanti"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs text-slate-400 hover:text-red-400"

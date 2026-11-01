@@ -11,7 +11,9 @@ import {
   Sparkles, 
   Play, 
   ExternalLink,
-  Camera
+  Flame,
+  Eye,
+  TrendingUp
 } from 'lucide-react';
 
 export default function Creator({ mousePosition }) {
@@ -19,54 +21,63 @@ export default function Creator({ mousePosition }) {
   const parallaxX = (mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth / 2 : 0)) * -0.012;
   const parallaxY = (mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) * -0.012;
 
+  const channelUrl = 'https://www.youtube.com/@sgboysbhatkanti';
+
+  // The 3 top/most-viewed reference trek episodes from @sgboysbhatkanti
   const vlogs = [
     {
-      id: 'trekking',
-      title: 'Sahyadri Forts & High-Altitude Trekking',
-      tag: 'Trekking & Peaks',
-      badge: '4K Cinema',
-      elevation: '4,500+ FT',
+      id: 'tikona',
+      title: 'Tikona Fort (Vitandgad) Trek',
+      tag: 'Most Viewed',
+      badge: '4K Trek Guide',
+      elevation: '3,500 FT',
+      location: 'Maval, Pawna Lake, Pune',
       description:
-        'Conquering ancient Maratha forts, mist-clad cliffs, and perilous monsoon ridges across the Western Ghats.',
+        'Conquering the iconic triangular Vitandgad hill fort, historic bastion gates, Trimbakeshwar Mahadev temple, and panoramic views of Pawna Dam.',
       bgGradient: 'from-amber-600/30 via-orange-900/20 to-slate-950',
       borderColor: 'border-amber-500/30 hover:border-amber-400/60',
       accentColor: '#f59e0b',
       tilt: '-rotate-2 group-hover:rotate-0',
       floatConfig: { duration: 5.8, y: [0, -12, 0], delay: 0 },
       icon: Mountain,
-      location: 'Harishchandragad & Rajgad',
+      videoUrl: 'https://www.youtube.com/@sgboysbhatkanti/search?query=Tikona',
+      metrics: 'Popular Sahyadri Series',
     },
     {
-      id: 'roadtrips',
-      title: 'Konkan Coast & Western Ghats Road Trips',
-      tag: 'Road Trips & Expeditions',
-      badge: 'GoPro POV',
-      elevation: '1,200 KM',
+      id: 'karnala',
+      title: 'Karnala Fort & Bird Sanctuary Expedition',
+      tag: 'Top Trek',
+      badge: 'Basalt Pinnacle',
+      elevation: '1,440 FT',
+      location: 'Panvel, Raigad District',
       description:
-        'Winding hairpin curves, coastal sea breezes, hidden waterfall cascades, and monsoon bike expeditions.',
+        'Hiking through dense forest trails inside Karnala Bird Sanctuary to scale the legendary 125-foot basalt rock chimney (Pandu\'s Tower).',
       bgGradient: 'from-orange-600/30 via-rose-900/20 to-slate-950',
       borderColor: 'border-orange-500/30 hover:border-orange-400/60',
       accentColor: '#f97316',
       tilt: 'rotate-3 group-hover:rotate-0',
       floatConfig: { duration: 6.4, y: [0, -15, 0], delay: 0.3 },
       icon: Compass,
-      location: 'Konkan Coastal Highway & Amboli Ghat',
+      videoUrl: 'https://www.youtube.com/@sgboysbhatkanti/search?query=Karnala',
+      metrics: 'High-Altitude Adventure',
     },
     {
-      id: 'cultural',
-      title: 'Cultural Heritage & Ancient Folklore',
-      tag: 'Cultural Exploration',
-      badge: 'Documentary Lore',
-      elevation: 'Historic Lore',
+      id: 'peb-fort',
+      title: 'Peb Fort (Vikatgad) & Kadyavarcha Ganpati',
+      tag: 'Adventure Special',
+      badge: 'Ridge Climb',
+      elevation: '2,100 FT',
+      location: 'Neral - Matheran Ridge',
       description:
-        'Unearthing centuries-old rock-cut temples, localized dialect traditions, and untold rural stories.',
+        'Extreme ridge walk featuring steep iron ladder climbs, rock-cut steps, caves, and the revered cliff-edge Kadyavarcha Ganpati shrine.',
       bgGradient: 'from-yellow-600/30 via-amber-900/20 to-slate-950',
       borderColor: 'border-yellow-500/30 hover:border-yellow-400/60',
       accentColor: '#eab308',
       tilt: '-rotate-3 group-hover:rotate-0',
       floatConfig: { duration: 5.2, y: [0, -10, 0], delay: 0.5 },
       icon: MapPin,
-      location: 'Deccan Temples & Rural Maharashtra',
+      videoUrl: 'https://www.youtube.com/@sgboysbhatkanti/search?query=Peb',
+      metrics: 'Monsoon Ridge Expedition',
     },
   ];
 
@@ -83,21 +94,45 @@ export default function Creator({ mousePosition }) {
             transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill bg-amber-950/40 border-amber-400/30 text-amber-300 text-xs font-mono mb-4 shadow-glow-gold"
           >
-            <Youtube className="w-4 h-4 text-red-400" />
-            <span>CREATOR ORBIT &bull; TRAVEL &amp; STORYTELLING</span>
+            <Youtube className="w-4 h-4 text-red-500" />
+            <span>OFFICIAL YOUTUBE &bull; @sgboysbhatkanti</span>
           </motion.div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
             SG Boy's Bhatkanti
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Beyond computer science and predictive models lies the thrill of the Sahyadris. Through 
-            <span className="text-amber-300 font-semibold"> SG Boy's Bhatkanti</span>, I chronicle high-altitude
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Beyond computer science and predictive models lies the thrill of the Sahyadris. Through{' '}
+            <span className="text-amber-300 font-semibold">SG Boy's Bhatkanti</span>, I chronicle high-altitude
             treks, scenic road trips, and Maharashtra's timeless heritage with cinematic immersion.
           </p>
+
+          {/* Direct Channel Link Header Pill */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={channelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-red-600/90 hover:bg-red-500 border border-red-400/40 shadow-lg shadow-red-600/30 transition-all duration-300 hover:scale-105"
+            >
+              <Youtube className="w-4 h-4 fill-current" />
+              <span>Visit @sgboysbhatkanti Channel</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
+            <a
+              href={`${channelUrl}/videos`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-mono text-slate-300 glass-pill hover:text-amber-300 hover:border-amber-400/40 transition-all"
+            >
+              <TrendingUp className="w-3.5 h-3.5 text-amber-400" />
+              <span>All Video Uploads</span>
+            </a>
+          </div>
         </div>
 
-        {/* Floating Tilted Vlog Cards Grid */}
+        {/* Floating Tilted Vlog Cards Grid with Real Episode References */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {vlogs.map((vlog) => {
             const Icon = vlog.icon;
@@ -114,10 +149,10 @@ export default function Creator({ mousePosition }) {
                   delay: vlog.floatConfig.delay,
                 }}
                 style={{
-                  x: parallaxX * (vlog.id === 'roadtrips' ? -1 : 1),
+                  x: parallaxX * (vlog.id === 'karnala' ? -1 : 1),
                   y: parallaxY,
                 }}
-                className="group relative"
+                className="group relative h-full"
               >
                 {/* Glow behind thumbnail card */}
                 <div
@@ -129,57 +164,68 @@ export default function Creator({ mousePosition }) {
                 <div
                   className={`relative p-6 rounded-3xl glass-panel bg-gradient-to-b ${vlog.bgGradient} border ${vlog.borderColor} transition-all duration-500 transform ${vlog.tilt} group-hover:scale-[1.03] shadow-2xl h-full flex flex-col justify-between`}
                 >
-                  {/* Thumbnail Visual Simulation */}
-                  <div className="relative w-full h-44 rounded-2xl bg-black/40 border border-white/10 mb-5 overflow-hidden flex flex-col justify-between p-4 group-hover:border-amber-400/40 transition-colors">
+                  {/* Thumbnail Visual Container with Link */}
+                  <a
+                    href={vlog.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative w-full h-44 rounded-2xl bg-black/50 border border-white/10 mb-5 overflow-hidden group/thumb group-hover:border-amber-400/40 transition-colors"
+                  >
                     {/* Decorative Top Badges */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/70 text-amber-300 border border-amber-400/30 flex items-center gap-1">
-                        <Icon className="w-3 h-3" />
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-amber-300 border border-amber-400/30 flex items-center gap-1">
+                        <Flame className="w-3 h-3 text-amber-400" />
                         {vlog.tag}
                       </span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-600/80 text-white font-bold tracking-wide">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-600/90 text-white font-bold tracking-wide">
                         {vlog.badge}
                       </span>
                     </div>
 
                     {/* Central Play Badge */}
-                    <div className="self-center flex items-center justify-center w-12 h-12 rounded-full bg-white/10 group-hover:bg-amber-500/80 group-hover:scale-110 text-white transition-all duration-300 backdrop-blur-md border border-white/20 shadow-lg">
-                      <Play className="w-5 h-5 ml-0.5 fill-current" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600/80 group-hover/thumb:bg-red-500 group-hover/thumb:scale-115 text-white transition-all duration-300 backdrop-blur-md border border-white/30 shadow-xl shadow-red-950/60">
+                        <Play className="w-6 h-6 ml-0.5 fill-current" />
+                      </div>
                     </div>
 
                     {/* Location Badge */}
-                    <div className="flex items-center justify-between text-[11px] font-mono text-slate-300">
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-amber-400" />
-                        {vlog.location}
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300 bg-black/70 px-2.5 py-1 rounded-lg backdrop-blur-sm border border-white/5">
+                      <span className="flex items-center gap-1 truncate max-w-[180px]">
+                        <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
+                        <span className="truncate">{vlog.location}</span>
                       </span>
-                      <span className="text-amber-300 font-semibold">{vlog.elevation}</span>
+                      <span className="text-amber-300 font-semibold shrink-0">{vlog.elevation}</span>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Content Info */}
-                  <div>
+                  <div className="mb-4">
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
                       {vlog.title}
                     </h3>
-                    <p className="text-xs text-slate-300 leading-relaxed font-light mb-4">
+                    <p className="text-xs text-slate-300 leading-relaxed font-light mb-3">
                       {vlog.description}
                     </p>
+                    <div className="flex items-center gap-1.5 text-[11px] font-mono text-amber-400/90">
+                      <Eye className="w-3.5 h-3.5 text-amber-400" />
+                      <span>{vlog.metrics}</span>
+                    </div>
                   </div>
 
                   {/* Watch Link */}
                   <div className="pt-3 border-t border-white/10 mt-auto flex items-center justify-between">
-                    <span className="text-xs font-mono text-amber-400 flex items-center gap-1.5">
-                      <Youtube className="w-3.5 h-3.5 text-red-400" />
-                      SG Boy's Bhatkanti
+                    <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                      <Youtube className="w-3.5 h-3.5 text-red-500" />
+                      @sgboysbhatkanti
                     </span>
                     <a
-                      href="https://youtube.com/@SGBoysBhatkanti"
+                      href={vlog.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-slate-300 hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-amber-300 bg-amber-950/40 border border-amber-400/30 hover:bg-amber-900/50 hover:text-white transition-all"
                     >
-                      <span>Watch</span>
+                      <span>Watch Episode</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
@@ -214,13 +260,13 @@ export default function Creator({ mousePosition }) {
               </p>
 
               <a
-                href="https://youtube.com/@SGBoysBhatkanti"
+                href={channelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 transition-all duration-300 shadow-lg shadow-amber-500/20"
               >
                 <Youtube className="w-4 h-4 fill-current text-red-600" />
-                <span>Explore the YouTube Channel</span>
+                <span>Subscribe to SG Boy's Bhatkanti</span>
               </a>
             </div>
 
