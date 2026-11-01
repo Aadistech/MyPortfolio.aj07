@@ -95,7 +95,7 @@ export default function Navbar({ gravityMode, toggleGravity }) {
 
           {/* LinkedIn Icon Link */}
           <a
-            href="https://www.linkedin.com/in/aaditya-jadhav/"
+            href="https://www.linkedin.com/in/aaditya-jadhav-6a0573329/"
             target="_blank"
             rel="noopener noreferrer"
             title="Aaditya's LinkedIn"
@@ -179,7 +179,7 @@ export default function Navbar({ gravityMode, toggleGravity }) {
                 <Github className="w-3.5 h-3.5" /> GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/aaditya-jadhav/"
+                href="https://www.linkedin.com/in/aaditya-jadhav-6a0573329/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-blue-400"
