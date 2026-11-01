@@ -156,16 +156,30 @@ function TiltCard({ project, onSelect, index, mousePosition }) {
               className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-colors"
             >
               <Github className="w-4 h-4" />
-              <span>Source Code</span>
+              <span>Source</span>
             </a>
 
-            <button
-              onClick={() => onSelect(project)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-cyan-300 bg-cyan-950/40 border border-cyan-400/30 hover:bg-cyan-900/40 transition-colors"
-            >
-              <span>View Specs</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </button>
+            <div className="flex items-center gap-2">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-cyan-300 hover:to-teal-200 transition-all shadow-md shadow-cyan-500/20"
+                >
+                  <span>Live App</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
+
+              <button
+                onClick={() => onSelect(project)}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-cyan-300 bg-cyan-950/40 border border-cyan-400/30 hover:bg-cyan-900/40 transition-colors"
+              >
+                <span>Specs</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -193,6 +207,7 @@ export default function Projects({ mousePosition }) {
       ],
       tech: ['Machine Learning', 'Flask', 'Pandas', 'Scikit-learn', 'Data Analytics', 'Python'],
       github: 'https://github.com/Aadistech/AadiBI',
+      liveUrl: 'https://aadibi.hexmind.in',
       architecture: [
         'Data Ingestion: High-volume customer activity logs processed via Pandas',
         'Preprocessing: Missing-value imputation, one-hot encoding, feature normalization',
@@ -375,15 +390,29 @@ export default function Projects({ mousePosition }) {
                     ))}
                   </div>
 
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-slate-950 bg-cyan-300 hover:bg-cyan-200 transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>Open GitHub Repo</span>
-                  </a>
+                  <div className="flex items-center gap-2">
+                    {selectedProject.liveUrl && (
+                      <a
+                        href={selectedProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-cyan-300 hover:to-teal-200 transition-all shadow-md shadow-cyan-500/20"
+                      >
+                        <span>Launch Live App</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    )}
+
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-slate-200 glass-pill hover:bg-white/[0.08] hover:text-cyan-300 border border-white/10 transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span>Source Code</span>
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             </div>
