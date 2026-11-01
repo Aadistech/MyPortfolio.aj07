@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Orbit, Github, Youtube, Instagram, Menu, X, Sparkles, Terminal } from 'lucide-react';
+import { Orbit, Github, Linkedin, Youtube, Instagram, Menu, X, Sparkles, Terminal } from 'lucide-react';
 
 export default function Navbar({ gravityMode, toggleGravity }) {
   const [scrolled, setScrolled] = useState(false);
@@ -93,6 +93,17 @@ export default function Navbar({ gravityMode, toggleGravity }) {
             <Github className="w-4 h-4" />
           </a>
 
+          {/* LinkedIn Icon Link */}
+          <a
+            href="https://www.linkedin.com/in/aaditya-jadhav/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Aaditya's LinkedIn"
+            className="p-2 rounded-full bg-white/[0.04] hover:bg-blue-500/20 text-slate-300 hover:text-blue-400 border border-white/10 hover:border-blue-400/30 transition-all duration-200"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+
           {/* YouTube SG Boy's Bhatkanti Icon Link */}
           <a
             href="https://www.youtube.com/@sgboysbhatkanti"
@@ -163,9 +174,17 @@ export default function Navbar({ gravityMode, toggleGravity }) {
                 href="https://github.com/Aadistech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-300"
+                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-300"
               >
-                <Github className="w-4 h-4" /> GitHub
+                <Github className="w-3.5 h-3.5" /> GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aaditya-jadhav/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-blue-400"
+              >
+                <Linkedin className="w-3.5 h-3.5" /> LinkedIn
               </a>
               <a
                 href="https://www.youtube.com/@sgboysbhatkanti"
